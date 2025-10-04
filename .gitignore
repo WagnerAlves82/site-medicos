@@ -6,10 +6,6 @@
 # Dependências
 node_modules/
 
-# Netlify
-.netlify/
-netlify/
-
 # Logs
 *.log
 npm-debug.log*
