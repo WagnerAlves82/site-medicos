@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levando Cura e Esperança à Terra Santa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0038b8 0%, #1e3a8a 50%, #0c4a6e 100%);
+        }
+        .text-shadow {
+            text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        .overlay-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scroll para âncoras
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        const mobileMenu = document.getElementById('mobileMenu');
+                        mobileMenu.classList.add('hidden');
+                        
+                        const offsetTop = targetSection.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fadeInUp');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.scroll-animate').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+    
+    <!-- Script do Checkout -->
+    <script src="js/checkout.js"></script>
+</head>
+<body class="antialiased">
+    <!-- Navigation Menu -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/10 backdrop-blur-md ">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logo_medicos.png" alt="Médicos por Israel Logo" class="h-16 w-auto">
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#missao" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Nossa Missão</a>
+                    <a href="#impacto" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Por que Contribuir</a>
+                    <a href="#transparencia" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Artistas</a>
+                    <a href="#blog" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Histórias</a>
+                    <a href="#doar" class="bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-gray-900 font-bold px-6 py-2.5 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+                        Doar Agora
+                    </a>
+                </div>
+
+                <!-- Menu Mobile Button -->
+                <button class="md:hidden text-gray-700 focus:outline-none" onclick="toggleMenu()">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="container mx-auto px-6 py-4 space-y-3">
+                <a href="#missao" class="block text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors">Nossa Missão</a>
+                <a href="#impacto" class="block text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors">Por que Contribuir</a>
+                <a href="#transparencia" class="block text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors">Artistas</a>
+                <a href="#blog" class="block text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors">Histórias</a>
+                <a href="#doar" class="block w-full bg-gradient-to-r from-yellow-400 to-yellow-600 text-gray-900 font-bold px-6 py-3 rounded-full shadow-lg mt-2 text-center">
+                    Doar Agora
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient overlay-pattern min-h-screen flex items-center relative overflow-hidden pt-20">
+        <div class="absolute top-20 right-10 w-64 h-64 bg-yellow-400 rounded-full opacity-10 blur-3xl"></div>
+        <div class="absolute bottom-20 left-10 w-96 h-96 bg-blue-300 rounded-full opacity-10 blur-3xl"></div>
+        
+        <div class="container mx-auto px-6 lg:px-8 py-16 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="text-blue-500 space-y-8 animate-fadeInUp">
+                    <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
+                        <svg class="w-4 h-4 mr-2 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        Transformando vidas
+                    </div>
+
+                    <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight tracking-tight text-blue-900">
+                        Levando Cura e Esperança à Terra Santa
+                    </h1>
+
+                    <p class="text-xl lg:text-2xl text-gray-600 leading-relaxed font-medium">
+                        Conectando médicos brasileiros ao chamado de abençoar Israel através do cuidado e da compaixão
+                    </p>
+
+                    <div class="bg-white/10 backdrop-blur-md border-l-4 border-yellow-400 rounded-lg p-6">
+                        <p class="text-lg italic text-gray-500 mb-2 font-medium">
+                            "Abençoarei os que te abençoarem, e amaldiçoarei os que te amaldiçoarem"
+                        </p>
+                        <p class="text-sm text-yellow-600 font-semibold">— Gênesis 12:3</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#doar" class="btn-glow bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-gray-900 font-bold text-lg px-8 py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                            Fazer uma Doação
+                        </a>
+                        
+                        <a href="#missao" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-semibold text-lg px-8 py-4 rounded-full border-2 border-white/30 transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Ver Nossa Missão
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
+                        <div>
+                            <p class="text-3xl font-bold text-yellow-300">150+</p>
+                            <p class="text-sm text-gray-300 font-medium">Médicos Enviados</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-yellow-300">12.5K</p>
+                            <p class="text-sm text-gray-300 font-medium">Vidas Impactadas</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-yellow-300">24</p>
+                            <p class="text-sm text-gray-300 font-medium">Missões Realizadas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative animate-fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <video 
+                            class="w-full aspect-[1/1] object-cover"
+                            controls
+                            poster="assets/thumb.png"
+                        >
+                            <source src="assets/israel_video1.mp4" type="video/mp4">
+                            Seu navegador não suporta a tag de vídeo.
+                        </video>
+                        
+                        <div class="absolute top-6 right-6 bg-white rounded-full px-4 py-2 shadow-xl">
+                            <p class="text-xs font-semibold text-gray-600">✓ Certificado e Transparente</p>
+                        </div>
+                    </div>
+
+                    <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-yellow-400 rounded-full opacity-20 blur-2xl -z-10"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Seção: Nossa Missão -->
+    <section id="missao" class="py-20 bg-white">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
+                <div class="w-full md:w-1/2 flex justify-center scroll-animate">
+                    <img 
+                        src="assets/Soldados_israelenses.jpg" 
+                        alt="Médicos por Israel" 
+                        class="w-full max-w-md rounded-2xl shadow-lg"
+                    >
+                </div>
+                
+                <div class="w-full md:w-1/2 text-center md:text-left scroll-animate">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Nossa Missão</h2>
+                    <p class="text-xl text-gray-600">
+                        Capacitar cristãos brasileiros a fazerem diferença real: financiando médicos que atuam na linha de frente em Israel, 
+                        levando socorro humanitário, desmascarando mentiras midiáticas e cumprindo o chamado bíblico de amor ao próximo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Por que Contribuir -->
+    <section id="impacto" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-animate">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6">
+                    Porque devo <span class="text-blue-600">contribuir</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    <span class="text-blue-600 font-semibold">Os filhos das trevas</span> são mais ágeis que os da luz,  
+                    porque muitas vezes o mal age com união e rapidez,  
+                    enquanto o bem hesita. Hoje, vemos nações se voltando contra  
+                    <span class="text-blue-600 font-semibold">Israel</span>, defendendo o que é injusto e esquecendo-se  
+                    do ataque cruel que tirou a vida de mais de mil inocentes.  
+                    Israel é a terra dos <span class="text-blue-600 font-semibold">patriarcas</span>,  
+                    o berço da fé e o lar de <span class="text-blue-600 font-semibold">Jesus</span>.  
+                    Ainda assim, o povo escolhido sofre.  
+                    É tempo de <span class="text-blue-600 font-semibold">agir com fé, amor e coragem</span>.
+                </p>
+            </div>
+            <div class="mt-16 flex justify-center scroll-animate">
+                <img src="assets/brasil_israel.jpg" alt="Apoie Israel" class="rounded-2xl shadow-2xl w-full max-w-4xl hover:scale-105 transition-transform duration-700">
+            </div>
+
+           <div class="mt-20 scroll-animate">
+                <h3 class="text-2xl font-bold text-gray-800 text-center mb-8">Instituições Parceiras</h3>
+                
+                <div class="relative overflow-hidden">
+                    <div class="flex animate-scroll gap-12 items-center">
+                        <!-- Logo 1 -->
+                        <div class="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+                            <img src="assets/JesusMaranatha_logo.png" alt="Instituição Parceira" class="h-28 w-auto opacity-60 hover:opacity-100">
+                        </div>
+                        <!-- Logo 2 -->
+                        <div class="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+                            <img src="assets/Emblem_of_the_ICRC_pt.png" alt="Instituição Parceira" class="h-28 w-auto opacity-60 hover:opacity-100">
+                        </div>
+                        <!-- Logo 3 -->
+                        <div class="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+                            <img src="assets/Badge_of_the_Israel_Defense_Forces.svg.png" alt="Instituição Parceira" class="h-28 w-auto opacity-60 hover:opacity-100">
+                        </div>
+                        <!-- Logo 4 -->
+                        <div class="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+                            <img src="assets/embaixada.jpg" alt="Instituição Parceira" class="h-28 w-auto opacity-60 hover:opacity-100">
+                        </div>
+                        <!-- Logo 5 -->
+                        <div class="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+                            <img src="assets/mossad.png" alt="Instituição Parceira" class="h-28 w-auto opacity-60 hover:opacity-100">
+                        </div>
+                        <!-- Logo 6 -->
+                        <div class="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+                            <img src="assets/Logo-Hospital-Albert-Einstein.png" alt="Instituição Parceira" class="h-28 w-auto opacity-60 hover:opacity-100">
+                        </div>
+                        
+                        <!-- Duplicar logos para efeito infinito -->
+                         <div class="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+                            <img src="assets/JesusMaranatha_logo.png" alt="Instituição Parceira" class="h-28 w-auto opacity-60 hover:opacity-100">
+                        </div>
+                        <!-- Logo 2 -->
+                        <div class="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+                            <img src="assets/GNSNOTÍCIAS.png" alt="Instituição Parceira" class="h-28 w-auto opacity-60 hover:opacity-100">
+                        </div>
+                        <!-- Logo 3 -->
+                        <div class="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+                            <img src="assets/arte_castelani_escola.png" alt="Instituição Parceira" class="h-28 w-auto opacity-60 hover:opacity-100">
+                        </div>
+                        <!-- Logo 4 -->
+                        <div class="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+                            <img src="assets/teste.png" alt="Instituição Parceira" class="h-28 w-auto opacity-60 hover:opacity-100">
+                        </div>
+                        <!-- Logo 5 -->
+                        <div class="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+                            <img src="assets/x_social.png" alt="Instituição Parceira" class="h-28 w-auto opacity-60 hover:opacity-100">
+                        </div>
+                        <!-- Logo 6 -->
+                        <div class="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+                            <img src="assets/reformados.jpeg" alt="Instituição Parceira" class="h-28 w-auto opacity-60 hover:opacity-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                @keyframes scroll {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+                .animate-scroll {
+                    animation: scroll 30s linear infinite;
+                }
+                .animate-scroll:hover {
+                    animation-play-state: paused;
+                }
+            </style>
+
+            
+        </div>
+    </section>
+
+    <!-- Seção: Artistas que Apoiam -->
+    <section id="transparencia" class="py-20 bg-white">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-animate">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    Artistas que <span class="text-blue-600">apoiam Israel</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    O apoio à nação de Israel vem de vozes conhecidas que levantam bandeiras de paz, fé e esperança.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
+                <div class="bg-gray-50 rounded-2xl shadow-lg p-8 text-center hover:-translate-y-2 transition-transform duration-500 hover:shadow-2xl scroll-animate">
+                    <img src="assets/galgadot.jpg" alt="Gal Gadot" class="w-32 h-32 mx-auto rounded-full shadow-md mb-6 object-cover">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Gal Gadot</h3>
+                    <p class="text-gray-600 italic mb-4">"Rezo por meu país e por todos que lutam pela paz. Israel está no meu coração."</p>
+                    <span class="text-blue-600 font-semibold text-sm">Atriz israelense e Embaixadora da Paz</span>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl shadow-lg p-8 text-center hover:-translate-y-2 transition-transform duration-500 hover:shadow-2xl scroll-animate">
+                    <img src="assets/bruno_mars.jpg" alt="Bruno Mars" class="w-32 h-32 mx-auto rounded-full shadow-md mb-6 object-cover">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Bruno Mars</h3>
+                    <p class="text-gray-600 italic mb-4">"Meu amor e minhas orações estão com Israel. Que a música una o que a guerra tenta dividir."</p>
+                    <span class="text-blue-600 font-semibold text-sm">Cantor e compositor</span>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl shadow-lg p-8 text-center hover:-translate-y-2 transition-transform duration-500 hover:shadow-2xl scroll-animate">
+                    <img src="assets/claudia_leite.jpg" alt="Claudia Leitte" class="w-32 h-32 mx-auto rounded-full shadow-md mb-6 object-cover">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Claudia Leitte</h3>
+                    <p class="text-gray-600 italic mb-4">"Eu estou com Israel"</p>
+                    <span class="text-blue-600 font-semibold text-sm">Cantora brasileira</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Histórias -->
+    <section id="blog" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-animate">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    Histórias que <span class="text-blue-600">Transformam</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Três vitórias que mostram como Deus luta por Israel e conduz Seu povo à vitória, mesmo contra todas as probabilidades.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-2 transition-transform duration-500 scroll-animate">
+                    <img src="assets/anjo_senaqueribe.jpg" alt="O Anjo e o Exército Assírio" class="w-full h-56 object-cover">
+                    <div class="p-8 text-center">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">O Anjo que Derrotou um Exército</h3>
+                        <p class="text-gray-600 mb-4">
+                            Quando o rei Senaqueribe cercou Jerusalém, Deus enviou um anjo que destruiu 185 mil soldados assírios em uma só noite.  
+                            <span class="text-blue-600 font-semibold">(2 Reis 19:35)</span>
+                        </p>
+                        <span class="text-sm text-gray-500 italic">A vitória pertence ao Senhor.</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-2 transition-transform duration-500 scroll-animate">
+                    <img src="assets/davi_golias.jpg" alt="Davi e Golias" class="w-full h-56 object-cover">
+                    <div class="p-8 text-center">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Davi e Golias</h3>
+                        <p class="text-gray-600 mb-4">
+                            Um jovem pastor enfrentou o gigante filisteu com apenas uma funda e fé no Deus de Israel.  
+                            <span class="text-blue-600 font-semibold">(1 Samuel 17)</span>
+                        </p>
+                        <span class="text-sm text-gray-500 italic">Com Deus, o impossível se torna vitória.</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-2 transition-transform duration-500 scroll-animate">
+                    <img src="assets/gideao_300.png" alt="Gideão e os 300" class="w-full h-56 object-cover">
+                    <div class="p-8 text-center">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Gideão e os 300</h3>
+                        <p class="text-gray-600 mb-4">
+                            Com apenas 300 homens, Gideão derrotou milhares de midianitas — porque Deus estava à frente da batalha.  
+                            <span class="text-blue-600 font-semibold">(Juízes 7)</span>
+                        </p>
+                        <span class="text-sm text-gray-500 italic">Deus não precisa de muitos, apenas de fé.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Formulário de Doação -->
+    <section id="doar" class="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-full h-full overlay-pattern"></div>
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-8 relative z-10">
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-12 scroll-animate">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4">Faça Sua Doação</h2>
+                    <p class="text-xl text-blue-100">Cada contribuição salva vidas e leva esperança à Terra Santa</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-2xl p-8 lg:p-12 scroll-animate">
+                    <form id="formDoacao">
+                        <div class="mb-8">
+                            <label class="block text-gray-700 font-bold mb-4 text-lg">Escolha um valor:</label>
+                            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                                <button type="button" class="btn-valor bg-white border-2 border-blue-600 hover:bg-blue-600 hover:text-white text-blue-600 font-bold py-3 px-4 rounded-lg transition-all" data-valor="50">R$ 50</button>
+                                <button type="button" class="btn-valor bg-white border-2 border-blue-600 hover:bg-blue-600 hover:text-white text-blue-600 font-bold py-3 px-4 rounded-lg transition-all" data-valor="100">R$ 100</button>
+                                <button type="button" class="btn-valor bg-white border-2 border-blue-600 hover:bg-blue-600 hover:text-white text-blue-600 font-bold py-3 px-4 rounded-lg transition-all" data-valor="250">R$ 250</button>
+                                <button type="button" class="btn-valor bg-white border-2 border-blue-600 hover:bg-blue-600 hover:text-white text-blue-600 font-bold py-3 px-4 rounded-lg transition-all" data-valor="500">R$ 500</button>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="amount" class="block text-gray-700 font-bold mb-2">Ou insira outro valor:</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold text-lg">R$</span>
+                                <input 
+                                    type="number" 
+                                    id="amount" 
+                                    name="amount"
+                                    min="10"
+                                    step="0.01"
+                                    placeholder="0,00"
+                                    required
+                                    class="w-full pl-12 pr-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-600 focus:outline-none text-lg font-semibold"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-bold mb-2">Nome completo:</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name"
+                                placeholder="Seu nome"
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-600 focus:outline-none"
+                            >
+                        </div>
+
+                        <div class="mb-8">
+                            <label for="email" class="block text-gray-700 font-bold mb-2">E-mail:</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email"
+                                placeholder="seu@email.com"
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-600 focus:outline-none"
+                            >
+                        </div>
+
+                        <button 
+                            type="submit"
+                            id="btnDoar"
+                            class="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-gray-900 font-bold text-xl py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center"
+                        >
+                            <span class="btn-text flex items-center">
+                                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                                Doar Agora
+                            </span>
+                            <span class="btn-loading hidden">
+                                <svg class="animate-spin h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                            </span>
+                        </button>
+
+                        <div class="mt-6 text-center">
+                            <p class="text-sm text-gray-500 flex items-center justify-center">
+                                <svg class="w-4 h-4 mr-1 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Pagamento 100% seguro via Mercado Pago
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white py-16">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/logo_medicos2.png" alt="Médicos por Israel" class="h-24 w-auto">
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Unindo fé e ação para apoiar vidas em Israel. Nossa missão é levar ajuda, esperança e consolo ao povo que guarda a promessa de Deus.
+                    </p>
+                    <div class="bg-white/10 backdrop-blur-sm border-l-4 border-yellow-400 rounded-lg p-4">
+                        <p class="text-sm italic text-yellow-300 font-medium">
+                            "Quem abençoa Israel, será abençoado."
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4 uppercase tracking-wide">Navegação</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#missao" class="text-gray-300 hover:text-yellow-400 transition-colors flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            Nossa Missão
+                        </a></li>
+                        <li><a href="#impacto" class="text-gray-300 hover:text-yellow-400 transition-colors flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            Por que Contribuir
+                        </a></li>
+                        <li><a href="#transparencia" class="text-gray-300 hover:text-yellow-400 transition-colors flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            Artistas que Apoiam
+                        </a></li>
+                        <li><a href="#blog" class="text-gray-300 hover:text-yellow-400 transition-colors flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                            Histórias de Vitória
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4 uppercase tracking-wide">Siga-nos</h4>
+                    <p class="text-gray-300 text-sm mb-4">Acompanhe nossas missões e testemunhos</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-blue-600 rounded-full flex items-center justify-center transition-all transform hover:scale-110 group">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-pink-600 rounded-full flex items-center justify-center transition-all transform hover:scale-110 group">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-red-600 rounded-full flex items-center justify-center transition-all transform hover:scale-110 group">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-green-600 rounded-full flex items-center justify-center transition-all transform hover:scale-110 group">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <a href="#doar" class="inline-block bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-gray-900 font-bold text-sm px-6 py-3 rounded-full shadow-lg transform hover:scale-105 transition-all">
+                            Fazer Doação
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="border-t border-white/20 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                    <p>© 2025 Médicos por Israel — Todos os direitos reservados.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="hover:text-yellow-400 transition-colors">Política de Privacidade</a>
+                        <a href="#" class="hover:text-yellow-400 transition-colors">Termos de Uso</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

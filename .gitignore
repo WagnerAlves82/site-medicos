@@ -1,0 +1,25 @@
+# Variáveis de ambiente
+.env
+.env.local
+.env.production
+
+# Dependências
+node_modules/
+
+# Netlify
+.netlify/
+netlify/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo

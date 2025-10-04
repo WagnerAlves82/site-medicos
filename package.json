@@ -1,0 +1,16 @@
+{
+  "name": "medicos-por-israel",
+  "version": "1.0.0",
+  "description": "Site de doações para Médicos por Israel",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'Build complete'"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "mercadopago": "^2.9.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^23.9.1"
+  }
+}
