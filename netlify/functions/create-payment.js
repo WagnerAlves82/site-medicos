@@ -51,9 +51,9 @@ exports.handler = async (event, context) => {
         email: email
     },
     back_urls: {
-    success: 'https://medicosporisrael.netlify.app/obrigado.html',
-    failure: 'https://medicosporisrael.netlify.app/erro.html',
-    pending: 'https://medicosporisrael.netlify.app/pendente.html'
+    success: `${process.env.SITE_URL}/obrigado.html`,
+    failure: `${process.env.SITE_URL}/erro.html`,
+    pending: `${process.env.SITE_URL}/pendente.html`
     },
     notification_url: `${process.env.SITE_URL}/.netlify/functions/webhook`,
     statement_descriptor: 'MEDICOS-ISRAEL',
