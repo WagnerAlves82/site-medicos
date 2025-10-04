@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doação Confirmada - Médicos por Israel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        @keyframes checkmark {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .checkmark {
+            animation: checkmark 0.6s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-blue-50 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto px-6 py-16">
+        <div class="max-w-2xl mx-auto bg-white rounded-3xl shadow-2xl p-12 text-center">
+            
+            <!-- Ícone de Sucesso -->
+            <div class="checkmark mb-8">
+                <div class="w-32 h-32 mx-auto bg-green-100 rounded-full flex items-center justify-center">
+                    <svg class="w-20 h-20 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Mensagem Principal -->
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Doação Confirmada!</h1>
+            <p class="text-xl text-gray-600 mb-8">
+                Sua contribuição foi aprovada com sucesso. Que Deus abençoe sua generosidade!
+            </p>
+
+            <!-- Versículo -->
+            <div class="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-6 mb-8">
+                <p class="text-lg italic text-gray-700 mb-2">
+                    "Cada um contribua segundo propôs no seu coração, não com tristeza ou por necessidade; porque Deus ama ao que dá com alegria."
+                </p>
+                <p class="text-sm text-blue-600 font-semibold">— 2 Coríntios 9:7</p>
+            </div>
+
+            <!-- Informações -->
+            <div class="bg-gray-50 rounded-xl p-6 mb-8 text-left">
+                <h3 class="font-bold text-gray-800 mb-3 text-center">O que acontece agora?</h3>
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Você receberá um <strong>e-mail de confirmação</strong> com os detalhes da doação</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Sua contribuição será direcionada <strong>diretamente para as missões médicas</strong> em Israel</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                       
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Botões -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+                    Voltar ao Início
+                </a>
+                <a href="/#doar" class="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-bold px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+                    Fazer Outra Doação
+                </a>
+            </div>
+
+            <!-- Logo -->
+            <div class="mt-12 pt-8 border-t border-gray-200">
+                <img src="assets/logo_medicos.png" alt="Médicos por Israel" class="h-16 mx-auto opacity-50">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

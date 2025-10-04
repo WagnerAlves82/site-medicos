@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Não Aprovado - Médicos por Israel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        .shake {
+            animation: shake 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-red-50 to-orange-50 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto px-6 py-16">
+        <div class="max-w-2xl mx-auto bg-white rounded-3xl shadow-2xl p-12 text-center">
+            
+            <div class="shake mb-8">
+                <div class="w-32 h-32 mx-auto bg-red-100 rounded-full flex items-center justify-center">
+                    <svg class="w-20 h-20 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </div>
+            </div>
+
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Pagamento Não Aprovado</h1>
+            <p class="text-xl text-gray-600 mb-8">
+                Infelizmente, não foi possível processar seu pagamento. Mas não se preocupe, você pode tentar novamente!
+            </p>
+
+            <div class="bg-gray-50 rounded-xl p-6 mb-8 text-left">
+                <h3 class="font-bold text-gray-800 mb-4 text-center">Possíveis motivos:</h3>
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                        </svg>
+                        <span><strong>Dados do cartão incorretos</strong> - Verifique número, validade e código de segurança</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                        </svg>
+                        <span><strong>Saldo insuficiente</strong> - Confirme se há limite disponível no cartão</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-orange-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                        </svg>
+                        <span><strong>Bloqueio pelo banco</strong> - Entre em contato com seu banco para liberar a transação</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-6 mb-8">
+                <p class="text-lg italic text-gray-700 mb-2">
+                    "O que importa não é a oferta em si, mas a intenção do coração."
+                </p>
+                <p class="text-sm text-blue-600 font-semibold">— 2 Coríntios 8:12 (adaptado)</p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/#doar" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+                    Tentar Novamente
+                </a>
+                <a href="/" class="bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-50 font-bold px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+                    Voltar ao Início
+                </a>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-200">
+                <img src="assets/logo_medicos.png" alt="Médicos por Israel" class="h-16 mx-auto opacity-50">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
