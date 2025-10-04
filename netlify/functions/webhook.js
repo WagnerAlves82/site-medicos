@@ -14,7 +14,7 @@ exports.handler = async (event, context) => {
   try {
     // Configurar Mercado Pago
     mercadopago.configure({
-      access_token: process.env.MP_ACCESS_TOKEN
+      access_token: process.env.MP_ACCESS_TOKENs
     });
 
     // Parse da notificação do Mercado Pago
