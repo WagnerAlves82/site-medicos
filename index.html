@@ -442,7 +442,7 @@
         </div>
     </section>
 
-    <!-- Seção: Formulário de Doação -->
+   <!-- Seção: Formulário de Doação -->
     <section id="doar" class="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-gray-900 relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-0 left-0 w-full h-full overlay-pattern"></div>
@@ -508,6 +508,22 @@
                             >
                         </div>
 
+                        <!-- Checkbox de Aceitação dos Termos -->
+                        <div class="mb-8">
+                            <label class="flex items-start cursor-pointer">
+                                <input 
+                                    type="checkbox" 
+                                    id="aceite-termos" 
+                                    name="aceite-termos"
+                                    required
+                                    class="mt-1 w-5 h-5 text-blue-600 border-2 border-gray-300 rounded focus:ring-2 focus:ring-blue-500"
+                                >
+                                <span class="ml-3 text-sm text-gray-700">
+                                    Li e aceito a <a href="/politica-privacidade.html" target="_blank" class="text-blue-600 hover:underline font-semibold">Política de Privacidade</a> e os <a href="/termos-de-uso.html" target="_blank" class="text-blue-600 hover:underline font-semibold">Termos de Uso</a>, e autorizo o tratamento dos meus dados pessoais conforme descrito.
+                                </span>
+                            </label>
+                        </div>
+
                         <button 
                             type="submit"
                             id="btnDoar"
@@ -540,7 +556,6 @@
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white py-16">
         <div class="container mx-auto px-6 lg:px-8">
@@ -629,8 +644,8 @@
                 <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
                     <p>© 2025 Médicos por Israel — Todos os direitos reservados.</p>
                     <div class="flex space-x-6 mt-4 md:mt-0">
-                        <a href="#" class="hover:text-yellow-400 transition-colors">Política de Privacidade</a>
-                        <a href="#" class="hover:text-yellow-400 transition-colors">Termos de Uso</a>
+                        <a href="/policy_privacy.html" class="hover:text-yellow-400 transition-colors">Política de Privacidade</a>
+                        <a href="/terms_of_use.html" class="hover:text-yellow-400 transition-colors">Termos de Uso</a>
                     </div>
                 </div>
             </div>

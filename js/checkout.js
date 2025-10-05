@@ -15,6 +15,11 @@ async function processarDoacao(event) {
   };
 
   console.log('Dados do formulário:', formData);
+  const aceiteTermos = document.getElementById('aceite-termos');
+  if (!aceiteTermos.checked) {
+    alert('Por favor, aceite a Política de Privacidade e os Termos de Uso para continuar');
+    return;
+  }
 
   // Validações básicas
   if (!formData.amount || parseFloat(formData.amount) <= 0) {
